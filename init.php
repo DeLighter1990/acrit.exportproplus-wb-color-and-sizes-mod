@@ -14,7 +14,6 @@ if (\Bitrix\Main\Loader::includeModule('acrit.exportproplus')) {
                             foreach ($Nomenclature["addin"] as &$addin) {
                                 if ($addin["type"] == "Основной цвет") {
                                     $addin["params"][0]["value"] = mb_strtolower($addin["params"][0]["value"]);
-                                    $Nomenclature["vendorCode"]  = $addin["params"][0]["value"];
                                     $color_key                   = array_search($addin["params"][0]["value"], array_column($ColorsAndVariations, 'color'));
                                     if ($color_key !== false) {
                                         # Remove duplicate sizes
